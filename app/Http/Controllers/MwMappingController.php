@@ -262,12 +262,12 @@ class MwMappingController extends Controller
             // insert to history service bus
             self::$temp['location_coordinate'] = ['type' => 'Point', 'coordinates' => [$request->longitude, $request->latitude]];
                 
-            WindowsAzure::sendQueueMessage(env('SERVICE_BASH_HISTORY_URL'), env('SERVICE_BASH_HISTORY_DB'), self::$temp);
+            // WindowsAzure::sendQueueMessage(env('SERVICE_BASH_HISTORY_URL'), env('SERVICE_BASH_HISTORY_DB'), self::$temp);
             
             // ADD Service Bus SELOG
-            if(!empty($vehicle->user_integration_id)){
-               WindowsAzure::sendQueueMessage(env('SERVICE_BASH_INTEGRATION_URL'), env('SERVICE_BASH_INTEGRATION_DB'), self::$temp);
-            }
+            // if(!empty($vehicle->user_integration_id)){
+            //    WindowsAzure::sendQueueMessage(env('SERVICE_BASH_INTEGRATION_URL'), env('SERVICE_BASH_INTEGRATION_DB'), self::$temp);
+            // }
 
             // check checkGeofence 
             self::checkGeofence($vehicle['id'], ['longitude' => $request->longitude, 'latitude' => $request->latitude]);
@@ -584,7 +584,7 @@ class MwMappingController extends Controller
                 }
 
                 GeofenceVehicle::where('vehicle_id', $vehicle_id)->update($GeofenceVehicleUpdate);
-                WindowsAzure::sendQueueMessage(env('SERVICE_BASH_GEOFENCE_URL'), env('SERVICE_BASH_GEOFENCE_DB'), $geofenceValue);
+                // WindowsAzure::sendQueueMessage(env('SERVICE_BASH_GEOFENCE_URL'), env('SERVICE_BASH_GEOFENCE_DB'), $geofenceValue);
             }
         }
     }

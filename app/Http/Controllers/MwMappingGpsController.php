@@ -218,7 +218,7 @@ class MwMappingGpsController extends Controller
             // insert to history service bus
             self::$temp['location_coordinate'] = ['type' => 'Point', 'coordinates' => [$request->longitude, $request->latitude]];
                 
-            WindowsAzure::sendQueueMessage(env('SERVICE_BASH_HISTORY_URL'), env('SERVICE_BASH_HISTORY_DB'), self::$temp);
+            // WindowsAzure::sendQueueMessage(env('SERVICE_BASH_HISTORY_URL'), env('SERVICE_BASH_HISTORY_DB'), self::$temp);
 
             // check checkGeofence 
             self::checkGeofence($vehicle['id'], ['longitude' => $request->longitude, 'latitude' => $request->latitude]);
@@ -347,7 +347,7 @@ class MwMappingGpsController extends Controller
                 }
 
                 GeofenceVehicle::where('vehicle_id', $vehicle_id)->update($GeofenceVehicleUpdate);
-                WindowsAzure::sendQueueMessage(env('SERVICE_BASH_GEOFENCE_URL'), env('SERVICE_BASH_GEOFENCE_DB'), $geofenceValue);
+                // WindowsAzure::sendQueueMessage(env('SERVICE_BASH_GEOFENCE_URL'), env('SERVICE_BASH_GEOFENCE_DB'), $geofenceValue);
             }
         }
     }
