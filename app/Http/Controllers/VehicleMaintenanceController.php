@@ -129,7 +129,7 @@ class VehicleMaintenanceController extends Controller
             $mwMapping = MwMapping::where('vehicle_number', $request->vin);
             $mw = $mwMapping->first();
             $parserConfig = ParserConfigDB::where('env', env('PARSER_ENV'))->first();
-            $mwResult = RestCurl::get($parserConfig->server_url.'/api/v1/backend/devices',["filter[code]" => $request->imei_new], ['Authorization: Bearer '. $parserConfig->access_token]);
+            // $mwResult = RestCurl::get($parserConfig->server_url.'/api/v1/backend/devices',["filter[code]" => $request->imei_new], ['Authorization: Bearer '. $parserConfig->access_token]);
             $end_point_array = explode(",",$request->input('end_points'));
 
             $data = array ( 
@@ -153,32 +153,32 @@ class VehicleMaintenanceController extends Controller
 
             $doUpdate =  VehicleMaintenanceDB::where('vin', $request->vin)->where('status', 0)->update($data);
             if($doUpdate){
-                if (!empty($mwResult['data']->data)) {
-                    $reff_vehicle_id = $mwResult['data']->data[0]->id;
+                // if (!empty($mwResult['data']->data)) {
+                //     $reff_vehicle_id = $mwResult['data']->data[0]->id;
 
-                     //get config parser
-                     $parserConfig = ParserConfigDB::where('env', env('PARSER_ENV'))->first();
-                     if(empty($parserConfig))
-                         throw new \Exception('Parser Configuration Not Found.');
+                //      //get config parser
+                //      $parserConfig = ParserConfigDB::where('env', env('PARSER_ENV'))->first();
+                //      if(empty($parserConfig))
+                //          throw new \Exception('Parser Configuration Not Found.');
                     
-                    $createParse = RestCurl::put($parserConfig->server_url.'/api/v1/backend/devices_by_code/'.$reff_vehicle_id, $provisioning, ['Authorization: Bearer '. $parserConfig->access_token]);
-                    if($createParse['status'] == 200) {
-                        $data['reff_vehicle_id'] =  trim($createParse['data']->data->id);
-                    } else {
-                        throw new \Exception(json_encode($createParse['data']));
-                    }
-                } else {
-                    $parserConfig = ParserConfigDB::where('env', env('PARSER_ENV'))->first();
-                    if(empty($parserConfig))
-                        throw new \Exception('Parser Configuration Not Found.');
+                //     $createParse = RestCurl::put($parserConfig->server_url.'/api/v1/backend/devices_by_code/'.$reff_vehicle_id, $provisioning, ['Authorization: Bearer '. $parserConfig->access_token]);
+                //     if($createParse['status'] == 200) {
+                //         $data['reff_vehicle_id'] =  trim($createParse['data']->data->id);
+                //     } else {
+                //         throw new \Exception(json_encode($createParse['data']));
+                //     }
+                // } else {
+                //     $parserConfig = ParserConfigDB::where('env', env('PARSER_ENV'))->first();
+                //     if(empty($parserConfig))
+                //         throw new \Exception('Parser Configuration Not Found.');
 
-                    $createParse = RestCurl::post($parserConfig->server_url.'/api/v1/backend/devices_by_code', $provisioning, ['Authorization: Bearer '. $parserConfig->access_token]);
-                    if($createParse['status'] == 201) {
-                        $reff_vehicle_id =  trim($createParse['data']->data->id);
-                    } else {
-                        throw new \Exception(json_encode($createParse['data']));
-                    }
-                }
+                //     $createParse = RestCurl::post($parserConfig->server_url.'/api/v1/backend/devices_by_code', $provisioning, ['Authorization: Bearer '. $parserConfig->access_token]);
+                //     if($createParse['status'] == 201) {
+                //         $reff_vehicle_id =  trim($createParse['data']->data->id);
+                //     } else {
+                //         throw new \Exception(json_encode($createParse['data']));
+                //     }
+                // }
 
                 if(!empty($mw)) {
                     $mwMapping->update(['imei' => $request->imei_new]);
@@ -220,9 +220,9 @@ class VehicleMaintenanceController extends Controller
 
                 return response()->json(Api::format($this->status, $this->data, $this->errorMsg), 200);
             }else{
-                $parserConfig = ParserConfigDB::where('env', env('PARSER_ENV'))->first();
-                if(empty($parserConfig))
-                    throw new \Exception('Parser Configuration Not Found.');
+                // $parserConfig = ParserConfigDB::where('env', env('PARSER_ENV'))->first();
+                // if(empty($parserConfig))
+                //     throw new \Exception('Parser Configuration Not Found.');
 
                 $end_point_array = explode(",",$request->input('end_points'));
                 $provisioning = [
@@ -235,28 +235,28 @@ class VehicleMaintenanceController extends Controller
                     "end_point_codes" => $end_point_array
                 ];
 
-                $mwResult = RestCurl::get($parserConfig->server_url.'/api/v1/backend/devices',["filter[code]" => $request->imei_new], ['Authorization: Bearer '. $parserConfig->access_token]);            
-                if (!empty($mwResult['data']->data)) {
-                    $reff_vehicle_id = $mwResult['data']->data[0]->id;
+                // $mwResult = RestCurl::get($parserConfig->server_url.'/api/v1/backend/devices',["filter[code]" => $request->imei_new], ['Authorization: Bearer '. $parserConfig->access_token]);            
+                // if (!empty($mwResult['data']->data)) {
+                //     $reff_vehicle_id = $mwResult['data']->data[0]->id;
     
-                    $createParse = RestCurl::put($parserConfig->server_url.'/api/v1/backend/devices_by_code/'.$reff_vehicle_id, $provisioning, ['Authorization: Bearer '. $parserConfig->access_token]);
-                    if($createParse['status'] == 200)
-                        $this->data = $data;
-                    else{
-                        $this->status   = "false";
-                        $this->errorMsg = "update provisioning failed";
+                //     $createParse = RestCurl::put($parserConfig->server_url.'/api/v1/backend/devices_by_code/'.$reff_vehicle_id, $provisioning, ['Authorization: Bearer '. $parserConfig->access_token]);
+                //     if($createParse['status'] == 200)
+                //         $this->data = $data;
+                //     else{
+                //         $this->status   = "false";
+                //         $this->errorMsg = "update provisioning failed";
 
-                        return response()->json(Api::format($this->status, $this->data, $this->errorMsg), 200);
-                    }
+                //         return response()->json(Api::format($this->status, $this->data, $this->errorMsg), 200);
+                //     }
 
-                } else {
-                    $createParse = RestCurl::post($parserConfig->server_url.'/api/v1/backend/devices_by_code', $provisioning, ['Authorization: Bearer '. $parserConfig->access_token]);                    
-                    if($createParse['status'] == 201)
-                        $reff_vehicle_id =  trim($createParse['data']->data->id);
-                    else {
-                        throw new \Exception(json_encode($createParse['data']));
-                    }
-                }
+                // } else {
+                //     $createParse = RestCurl::post($parserConfig->server_url.'/api/v1/backend/devices_by_code', $provisioning, ['Authorization: Bearer '. $parserConfig->access_token]);                    
+                //     if($createParse['status'] == 201)
+                //         $reff_vehicle_id =  trim($createParse['data']->data->id);
+                //     else {
+                //         throw new \Exception(json_encode($createParse['data']));
+                //     }
+                // }
 
                 $doInsert =  VehicleMaintenanceDB::create($data);
                 if($doInsert){

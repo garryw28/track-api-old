@@ -28,7 +28,6 @@ use Kreait\Firebase\Database;
 use Kreait\Firebase\Messaging\Message;
 use Kreait\Firebase\Messaging\Notification;
 use Kreait\Firebase\Messaging\CloudMessage;
-use App\Helpers\RestCurl;
 use App\Helpers\WindowsAzure;
 use DB, Log;
 

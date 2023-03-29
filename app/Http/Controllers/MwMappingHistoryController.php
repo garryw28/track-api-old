@@ -45,16 +45,16 @@ class MwMappingHistoryController extends Controller
                 $dt = Carbon::now()->subMinutes(5)->format('Y-m-d H:i:s');
                 $result = $result->orderBy('device_time', $sort)->limit(6)->get();                
                 
-                foreach ($result as $k => $v) {
-                    $getAddress = RestCurl::get(env('REVERSE_GEOCODE').'/reversegeocoding', ['lat' => $v['latitude'], 'lng' => $v['longitude'], 'format' => 'JSON']);
-                    $result[$k]['address'] = '';
-                    if($getAddress['status'] == 200 && isset($getAddress['data']->result[0]) && !empty($getAddress['data']->result[0])){
-                        $address = $getAddress['data']->result[0];
-                        $result[$k]['address'] = $address->formatedFull;
-                        if($result[$k]['device_time'] > $dt)
-                            $array_sub[] = $result[$k];
-                    }
-                }
+                // foreach ($result as $k => $v) {
+                //     $getAddress = RestCurl::get(env('REVERSE_GEOCODE').'/reversegeocoding', ['lat' => $v['latitude'], 'lng' => $v['longitude'], 'format' => 'JSON']);
+                //     $result[$k]['address'] = '';
+                //     if($getAddress['status'] == 200 && isset($getAddress['data']->result[0]) && !empty($getAddress['data']->result[0])){
+                //         $address = $getAddress['data']->result[0];
+                //         $result[$k]['address'] = $address->formatedFull;
+                //         if($result[$k]['device_time'] > $dt)
+                //             $array_sub[] = $result[$k];
+                //     }
+                // }
 
                 if (!empty($array_sub))
                     $result = $array_sub;

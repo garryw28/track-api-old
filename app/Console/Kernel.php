@@ -26,9 +26,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('firebasescheduler:sync')->daily();
-        $schedule->command('parserscheduler:sync')->daily();
-        $schedule->command('integrationscheduler:sync')->daily();
+        #$schedule->command('firebasescheduler:sync')->daily();
+        #$schedule->command('parserscheduler:sync')->daily();
+        #$schedule->command('integrationscheduler:sync')->daily();
     }
 }
 /*php artisan reservationscheduler:sync*/

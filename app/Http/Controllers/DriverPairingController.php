@@ -7,7 +7,6 @@ use Illuminate\Validation\ValidationException;
 use App\Models\MasterVehicle as MasterVehicleDB;
 use App\Models\ParserConfig as ParserConfigDB;
 use App\Helpers\Api;
-use App\Helpers\RestCurl;
 use DB;
 
 class DriverPairingController extends Controller

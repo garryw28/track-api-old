@@ -148,30 +148,30 @@ class VehicleSecondObdController extends Controller
                         "end_point_codes" => $end_points_secondobd
                     ];
     
-                    $mwResult = RestCurl::get($parserConfig->server_url.'/api/v1/backend/devices',["filter[code]" => $request->imei_obd_second], ['Authorization: Bearer '. $parserConfig->access_token]);
+                    // $mwResult = RestCurl::get($parserConfig->server_url.'/api/v1/backend/devices',["filter[code]" => $request->imei_obd_second], ['Authorization: Bearer '. $parserConfig->access_token]);
                     
-                    if (!empty($mwResult['data']->data)) {
-                        $reff_vehicle_idsecond = $mwResult['data']->data[0]->id;
+                    // if (!empty($mwResult['data']->data)) {
+                    //     $reff_vehicle_idsecond = $mwResult['data']->data[0]->id;
                         
-                        $createParse = RestCurl::put($parserConfig->server_url.'/api/v1/backend/devices_by_code/'.$reff_vehicle_idsecond, $provisioning, ['Authorization: Bearer '. $parserConfig->access_token]);
-                        if($createParse['status'] == 200) {
-                            if (!empty($end_points_secondobd)) {
-                                $vehicle_update['reff_vehicle_idsecond'] =  trim($createParse['data']->data->id);
-                            }
-                        } else {
-                            throw new \Exception(json_encode($createParse['data']));
-                        }
-                    }else {
-                        $createParse = RestCurl::post($parserConfig->server_url.'/api/v1/backend/devices_by_code', $provisioning, ['Authorization: Bearer '. $parserConfig->access_token]);
-                        if($createParse['status'] == 201) {
-                            $reff_vehicle_idsecond =  trim($createParse['data']->data->id);
-                            if (!empty($end_points_secondobd)) {
-                                $vehicle_update['reff_vehicle_idsecond'] =  $reff_vehicle_idsecond;
-                            }
-                        } else {
-                            throw new \Exception(json_encode($createParse['data']));
-                        }
-                    }
+                    //     $createParse = RestCurl::put($parserConfig->server_url.'/api/v1/backend/devices_by_code/'.$reff_vehicle_idsecond, $provisioning, ['Authorization: Bearer '. $parserConfig->access_token]);
+                    //     if($createParse['status'] == 200) {
+                    //         if (!empty($end_points_secondobd)) {
+                    //             $vehicle_update['reff_vehicle_idsecond'] =  trim($createParse['data']->data->id);
+                    //         }
+                    //     } else {
+                    //         throw new \Exception(json_encode($createParse['data']));
+                    //     }
+                    // }else {
+                    //     $createParse = RestCurl::post($parserConfig->server_url.'/api/v1/backend/devices_by_code', $provisioning, ['Authorization: Bearer '. $parserConfig->access_token]);
+                    //     if($createParse['status'] == 201) {
+                    //         $reff_vehicle_idsecond =  trim($createParse['data']->data->id);
+                    //         if (!empty($end_points_secondobd)) {
+                    //             $vehicle_update['reff_vehicle_idsecond'] =  $reff_vehicle_idsecond;
+                    //         }
+                    //     } else {
+                    //         throw new \Exception(json_encode($createParse['data']));
+                    //     }
+                    // }
     
                     $MsVehicle->update($vehicle_update);
 
@@ -196,12 +196,12 @@ class VehicleSecondObdController extends Controller
                         "end_point_codes" => $end_points_secondobd
                     ];
 
-                    $createParse = RestCurl::put($parserConfig->server_url.'/api/v1/backend/devices_by_code/'.$MsVehicle->reff_vehicle_idsecond, $provisioning, ['Authorization: Bearer '. $parserConfig->access_token]);
-                    if($createParse['status'] == 200) {
-                        $vehicle_update['reff_vehicle_idsecond'] =  trim($createParse['data']->data->id);
-                    } else {
-                        throw new \Exception(json_encode($createParse['data']));
-                    }
+                    // $createParse = RestCurl::put($parserConfig->server_url.'/api/v1/backend/devices_by_code/'.$MsVehicle->reff_vehicle_idsecond, $provisioning, ['Authorization: Bearer '. $parserConfig->access_token]);
+                    // if($createParse['status'] == 200) {
+                    //     $vehicle_update['reff_vehicle_idsecond'] =  trim($createParse['data']->data->id);
+                    // } else {
+                    //     throw new \Exception(json_encode($createParse['data']));
+                    // }
 
                     $MsVehicle->update($data);
                 }                

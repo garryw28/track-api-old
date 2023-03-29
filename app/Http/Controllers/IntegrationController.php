@@ -151,13 +151,13 @@ class IntegrationController extends Controller
             "Vendor_id"  => $parserConfigEnseval->vendor_id
         ];
 
-        $loginparser = RestCurl::post($parserConfigEnseval->server_url.'/GPSVendor/api/oauth/token', $databody, ['Authorization: Basic '. $parserConfigEnseval->basic_outh]);
+        // $loginparser = RestCurl::post($parserConfigEnseval->server_url.'/GPSVendor/api/oauth/token', $databody, ['Authorization: Basic '. $parserConfigEnseval->basic_outh]);
 
-        if($loginparser['status'] == 200){
-            $access_token = trim($loginparser['data']->access_token);
-        }else{
-            throw new \Exception(json_encode($loginparser));
-        }
+        // if($loginparser['status'] == 200){
+        //     $access_token = trim($loginparser['data']->access_token);
+        // }else{
+        //     throw new \Exception(json_encode($loginparser));
+        // }
 
         // Cron 5 Menit Sekali
         $vehicletrip = IntegrationVendor::where('status_trip',1)->where('list_order.radius_order',1)->get();
@@ -246,14 +246,14 @@ class IntegrationController extends Controller
 
                         $send_databody = $datato_enseval;                    
                         // POST To VENDOR
-                        $senddata = RestCurl::post($parserConfigEnseval->server_url.'/GPSVendor/api/pushlocdev', $send_databody, ['Authorization: Bearer '. $access_token]);
-                        if($senddata['data']->responseCode == "000"){
-                            echo "<pre>";
-                            print_r('OK');
-                        }else{
-                            echo "<pre>";
-                            print_r($senddata['data']->errorDesc);
-                        }
+                        // $senddata = RestCurl::post($parserConfigEnseval->server_url.'/GPSVendor/api/pushlocdev', $send_databody, ['Authorization: Bearer '. $access_token]);
+                        // if($senddata['data']->responseCode == "000"){
+                        //     echo "<pre>";
+                        //     print_r('OK');
+                        // }else{
+                        //     echo "<pre>";
+                        //     print_r($senddata['data']->errorDesc);
+                        // }
                     }
                 }
             }    

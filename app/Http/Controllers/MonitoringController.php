@@ -40,19 +40,19 @@ class MonitoringController extends Controller
     public function getAddress(Request $request){
         try{
             $result = "";
-            $getAddress = RestCurl::get(env('REVERSE_GEOCODE').'/reversegeocoding', ['lat' => $request->latitude, 'lng' => $request->longitude, 'format' => 'JSON']);
+            // $getAddress = RestCurl::get(env('REVERSE_GEOCODE').'/reversegeocoding', ['lat' => $request->latitude, 'lng' => $request->longitude, 'format' => 'JSON']);
             
-            if ($getAddress['status'] != 200) {
-                $this->status   = false;
-                $this->errorMsg = $getAddress['data']->error;    
+            // if ($getAddress['status'] != 200) {
+            //     $this->status   = false;
+            //     $this->errorMsg = $getAddress['data']->error;    
                 
-                return response()->json(Api::format($this->status, $this->data, $this->errorMsg), 200);
-            }
+            //     return response()->json(Api::format($this->status, $this->data, $this->errorMsg), 200);
+            // }
 
-            if(isset($getAddress['data']->result[0]) && !empty($getAddress['data']->result[0])){
-                $address = $getAddress['data']->result[0];
-                $result = $address->formatedFull;
-            }
+            // if(isset($getAddress['data']->result[0]) && !empty($getAddress['data']->result[0])){
+            //     $address = $getAddress['data']->result[0];
+            //     $result = $address->formatedFull;
+            // }
 
             $this->data = $result;
         }catch(\Exception $e){
