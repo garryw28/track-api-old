@@ -81,8 +81,8 @@ class Authenticate
                 return response()->json(Api::format('false', '', 'User not Found'), 200);
             }
     
-            if ($token != $user->device_token) 
-                return response()->json(Api::format('false', '', 'JWT Token Expired'), 200);    
+            // if ($token != $user->device_token) 
+            //     return response()->json(Api::format('false', '', 'JWT Token Expired'), 200);    
         }
 
         return $next($request);
