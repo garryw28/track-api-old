@@ -1,0 +1,7033 @@
+{
+	"swagger": "2.0",
+	"info": {
+	  "version": "1.0",
+	  "title": "MONICA",
+	  "description": "",
+	  "contact": {}
+	},
+	"host": "monica-be121-dev.sera.astra.co.id",
+	"basePath": "/api",
+	"schemes": [
+	  "https"
+	],
+	"paths": {
+	  "/user": {
+	  "get": {
+		"description": "Get All User",
+		"summary": "Get All User",
+		"tags": [
+		"Ms User"
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "post": {
+		"description": "Add User",
+		"summary": "Add User",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms User"
+		],
+		"parameters": [{
+		"name": "name",
+		"in": "formData",
+		"description": "User Name",
+		"required": true,
+		"type": "string"
+		},{
+		"name": "email",
+		"in": "formData",
+		"description": "User Email",
+		"required": true,
+		"type": "string"
+		},{
+		"name": "no_telp",
+		"in": "formData",
+		"description": "User Phone",
+		"required": true,
+		"type": "string"
+		},{
+		"name": "role_id",
+		"in": "formData",
+		"description": "Role Id",
+		"required": true,
+		"type": "string"
+		},{
+		"name": "fleet_group_id",
+		"in": "formData",
+		"description": "Fleet Group Id",
+		"required": true,
+		"type": "string"
+		},{
+		"name": "created_by",
+		"in": "formData",
+		"description": "Created By",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/user/{id}": {
+	  "get": {
+		"description": "User Detail",
+		"summary": "User Detail",
+		"tags": [
+		"Ms User"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "User Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "put": {
+		"description": "Update User",
+		"summary": "Update User",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms User"
+		],
+		"parameters": [{
+		  "name": "id",
+		  "in": "path",
+		  "description": "User Id",
+		  "required": true,
+		  "type": "string",
+		},{
+		"name": "name",
+		"in": "formData",
+		"description": "User Name",
+		"required": true,
+		"type": "string"
+		},{
+		"name": "email",
+		"in": "formData",
+		"description": "User Email",
+		"required": true,
+		"type": "string"
+		},{
+		"name": "no_telp",
+		"in": "formData",
+		"description": "User Phone",
+		"required": true,
+		"type": "string"
+		},{
+		"name": "role_id",
+		"in": "formData",
+		"description": "Role Id",
+		"required": true,
+		"type": "string"
+		},{
+		"name": "fleet_group_id",
+		"in": "formData",
+		"description": "Fleet Group Id",
+		"required": true,
+		"type": "string"
+		},{
+		"name": "created_by",
+		"in": "formData",
+		"description": "Created By",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "delete": {
+		"description": "Delete User",
+		"summary": "Delete User",
+		"tags": [
+		"Ms User"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "User Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/user-resend/{id}": {
+	  "get": {
+		"description": "Resend User Activation",
+		"summary": "Resend User Activation",
+		"tags": [
+		"Ms User"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "User Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  },
+	  "/role": {
+	  "get": {
+		"description": "Get all Role",
+		"summary": "Get All Role",
+		"tags": [
+		"Ms Role"
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "post": {
+		"description": "Add Role",
+		"summary": "Add Role",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Role"
+		],
+		"parameters": [{
+		  "name": "role_name",
+		  "in": "formData",
+		  "description": "Role Name",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "created_by",
+		  "in": "formData",
+		  "description": "Created By",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/role/{id}": {
+	  "get": {
+		"description": "Role Detail",
+		"summary": "Role Detail",
+		"tags": [
+		"Ms Role"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Role Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "put": {
+		"description": "Update Role",
+		"summary": "Update Role",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Role"
+		],
+		"parameters": [{
+		  "name": "id",
+		  "in": "path",
+		  "description": "Role Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "role_name",
+		  "in": "formData",
+		  "description": "Role Name",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "created_by",
+		  "in": "formData",
+		  "description": "Created By",
+		  "required": false,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "delete": {
+		"description": "Delete Role",
+		"summary": "Delete Role",
+		"tags": [
+		"Ms Role"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Role Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/menu": {
+	  "get": {
+		"description": "Get all Menu",
+		"summary": "Get All Menu",
+		"tags": [
+		"Ms Menu"
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "post": {
+		"description": "Add Menu",
+		"summary": "Add Menu",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Menu"
+		],
+		"parameters": [{
+		  "name": "menu_name",
+		  "in": "formData",
+		  "description": "Menu Name",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "created_by",
+		  "in": "formData",
+		  "description": "Created By",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/menu/{id}": {
+	  "get": {
+		"description": "Menu Detail",
+		"summary": "Menu Detail",
+		"tags": [
+		"Ms Menu"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Menu Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "put": {
+		"description": "Update Menu",
+		"summary": "Update Menu",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Menu"
+		],
+		"parameters": [{
+		  "name": "id",
+		  "in": "path",
+		  "description": "Menu Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "menu_name",
+		  "in": "formData",
+		  "description": "Menu Name",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "created_by",
+		  "in": "formData",
+		  "description": "Created By",
+		  "required": false,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "delete": {
+		"description": "Delete Menu",
+		"summary": "Delete Menu",
+		"tags": [
+		"Ms Menu"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Menu Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/role-menu": {
+	  "get": {
+		"description": "Get All Role Menu",
+		"summary": "Get All Role Menu",
+		"tags": [
+		"Ms Role Menu"
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "post": {
+		"description": "Add Role Menu",
+		"summary": "Add Role Menu",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Role Menu"
+		],
+		"parameters": [{
+		  "name": "role_id",
+		  "in": "formData",
+		  "description": "Role Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "menu_id",
+		  "in": "formData",
+		  "description": "Menu Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "fleet_group_id",
+		  "in": "formData",
+		  "description": "Fleet Group Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "levels",
+		  "in": "formData",
+		  "description": "Levels",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "created_by",
+		  "in": "formData",
+		  "description": "Created By",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/role-menu/{id}": {
+	  "get": {
+		"description": "Role Menu Detail",
+		"summary": "Role Menu Detail",
+		"tags": [
+		"Ms Role Menu"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Menu Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "put": {
+		"description": "Update Role Menu",
+		"summary": "Update Role Menu",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Role Menu"
+		],
+		"parameters": [{
+		  "name": "id",
+		  "in": "path",
+		  "description": "Role Menu Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "menu_id",
+		  "in": "formData",
+		  "description": "Menu Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "fleet_group_id",
+		  "in": "formData",
+		  "description": "Fleet Group Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "levels",
+		  "in": "formData",
+		  "description": "Levels",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "created_by",
+		  "in": "formData",
+		  "description": "Created By",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "delete": {
+		"description": "Delete Role Menu",
+		"summary": "Delete Role Menu",
+		"tags": [
+		"Ms Role Menu"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Role Menu Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/brand": {
+	  "get": {
+		"description": "Get all Brand",
+		"summary": "Get All Brand",
+		"tags": [
+		"Ms Brand"
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "post": {
+		"description": "Add Brand",
+		"summary": "Add Brand",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Brand"
+		],
+		"parameters": [{
+		"name": "brand_name",
+		"in": "formData",
+		"description": "Brand Name",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/brand/{id}": {
+	  "get": {
+		"description": "Brand Detail",
+		"summary": "Brand Detail",
+		"tags": [
+		"Ms Brand"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Brand Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "put": {
+		"description": "Update Brand",
+		"summary": "Update Brand",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Brand"
+		],
+		"parameters": [{
+		  "name": "id",
+		  "in": "path",
+		  "description": "Brand Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "brand_name",
+		  "in": "formData",
+		  "description": "Brand Name",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "delete": {
+		"description": "Delete Brand",
+		"summary": "Delete Brand",
+		"tags": [
+		"Ms Brand"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Brand Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/model": {
+	  "get": {
+		"description": "Get All Vehicle Model",
+		"summary": "Get All Vehicle Model",
+		"tags": [
+		"Ms Model Vehicle"
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "post": {
+		"description": "Add Vehicle Model",
+		"summary": "Add Vehicle Model",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Model Vehicle"
+		],
+		"parameters": [{
+		"name": "model_name",
+		"in": "formData",
+		"description": "Model Name",
+		"required": true,
+		"type": "string"
+		},
+		{
+		"name": "brand_id",
+		"in": "formData",
+		"description": "Brand Id",
+		"required": true,
+		"type": "string"
+		},
+		{
+		"name": "created_by",
+		"in": "formData",
+		"description": "Created By",
+		"required": true,
+		"type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/model/{id}": {
+	  "get": {
+		"description": "Vehicle Model Detail",
+		"summary": "Vehicle Model Detail",
+		"tags": [
+		"Ms Model Vehicle"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Model Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "put": {
+		"description": "Update Vehicle Model",
+		"summary": "Update Vehicle Model",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Model Vehicle"
+		],
+		"parameters": [{
+		  "name": "id",
+		  "in": "path",
+		  "description": "Model Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "brand_id",
+		  "in": "formData",
+		  "description": "Brand Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "created_by",
+		  "in": "formData",
+		  "description": "Created By",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "delete": {
+		"description": "Delete Vehicle Model",
+		"summary": "Delete Vehicle Model",
+		"tags": [
+		"Ms Model Vehicle"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Model Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/level": {
+	  "get": {
+		"description": "Get All Level",
+		"summary": "Get All Level",
+		"tags": [
+		"Ms Level"
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "post": {
+		"description": "Add Level",
+		"summary": "Add Level",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Level"
+		],
+		"parameters": [{
+		"name": "description",
+		"in": "formData",
+		"description": "Level Description",
+		"required": true,
+		"type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/level/{id}": {
+	  "get": {
+		"description": "Level Detail",
+		"summary": "Level Detail",
+		"tags": [
+		"Ms Level"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Level Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "put": {
+		"description": "Update Level",
+		"summary": "Update Level",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Level"
+		],
+		"parameters": [{
+		  "name": "id",
+		  "in": "path",
+		  "description": "Level Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "description",
+		  "in": "formData",
+		  "description": "Description",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "delete": {
+		"description": "Delete Level",
+		"summary": "Delete Level",
+		"tags": [
+		"Ms Level"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Level Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/fleet-group": {
+	  "get": {
+		"description": "Get all Fleet Group",
+		"summary": "Get All Fleet Group",
+		"tags": [
+		"Ms Fleet Group"
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "post": {
+		"description": "Add Fleet Group",
+		"summary": "Add Fleet Group",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Fleet Group"
+		],
+		"parameters": [{
+		  "name": "fleet_group_name",
+		  "in": "formData",
+		  "description": "Fleet Group Name",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "fleet_group_code",
+		  "in": "formData",
+		  "description": "Fleet Group Code",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "levels",
+		  "in": "formData",
+		  "description": "Levels",
+		  "required": true,
+		  "type": "integer"
+		},
+		{
+		  "name": "parent_id",
+		  "in": "formData",
+		  "description": "Parent Id",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "created_by",
+		  "in": "formData",
+		  "description": "Created By",
+		  "required": false,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/fleet-group/{id}": {
+	  "get": {
+		"description": "Fleet Group Detail",
+		"summary": "Fleet Group Detail",
+		"tags": [
+		"Ms Fleet Group"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Fleet Group Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "put": {
+		"description": "Update Fleet Group",
+		"summary": "Update Fleet Group",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Fleet Group"
+		],
+		"parameters": [{
+		  "name": "id",
+		  "in": "path",
+		  "description": "Fleet Group Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "brand_name",
+		  "in": "formData",
+		  "description": "Brand Name",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "delete": {
+		"description": "Delete Fleet Group",
+		"summary": "Delete Fleet Group",
+		"tags": [
+		"Ms Fleet Group"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Fleet Group Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/fleet-group/child/{id}": {
+	  "get": {
+		"description": "Get All Child Fleet Group",
+		"summary": "Get All Child Fleet Group",
+		"tags": [
+		"Ms Fleet Group"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Fleet Group Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/alert": {
+	  "get": {
+		"description": "Get All Alert",
+		"summary": "Get All Alert",
+		"tags": [
+		"Ms Alert"
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "post": {
+		"description": "Add Alert",
+		"summary": "Add Alert",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Alert"
+		],
+		"parameters": [{
+		  "name": "alert_name",
+		  "in": "formData",
+		  "description": "Alert Name",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "created_by",
+		  "in": "formData",
+		  "description": "Created By",
+		  "required": false,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/alert/{id}": {
+	  "get": {
+		"description": "Alert Detail",
+		"summary": "Alert Detail",
+		"tags": [
+		"Ms Alert"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Alert Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "put": {
+		"description": "Update Alert",
+		"summary": "Update Alert",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Alert"
+		],
+		"parameters": [{
+		  "name": "id",
+		  "in": "path",
+		  "description": "Alert Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "alert_name",
+		  "in": "formData",
+		  "description": "Alert Name",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "delete": {
+		"description": "Delete Alert",
+		"summary": "Delete Alert",
+		"tags": [
+		"Ms Alert"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Alert Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/alert-mapping": {
+	  "get": {
+		"description": "Get All Alert Mapping",
+		"summary": "Get All Alert Mapping",
+		"tags": [
+		"Ms Alert Mapping"
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "post": {
+		"description": "Add Alert Mapping",
+		"summary": "Add Alert Mapping",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Alert Mapping"
+		],
+		"parameters": [{
+		  "name": "data_alert",
+		  "in": "formData",
+		  "description": "Alert Data",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "fleet_group_id",
+		  "in": "formData",
+		  "description": "Fleet Group Id",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "created_by",
+		  "in": "formData",
+		  "description": "Created By",
+		  "required": false,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/alert-mapping/{id}": {
+	  "get": {
+		"description": "Alert Mapping Detail",
+		"summary": "Alert Mapping Detail",
+		"tags": [
+		"Ms Alert Mapping"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Alert Mapping Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "put": {
+		"description": "Update Alert Mapping",
+		"summary": "Update Alert Mapping",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Alert Mapping"
+		],
+		"parameters": [{
+		  "name": "id",
+		  "in": "path",
+		  "description": "Alert Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "fleet_group_id",
+		  "in": "formData",
+		  "description": "Fleet Group Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "data_alert",
+		  "in": "formData",
+		  "description": "Alert Data",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "delete": {
+		"description": "Delete Alert Mapping",
+		"summary": "Delete Alert Mapping",
+		"tags": [
+		"Ms Alert Mapping"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Alert Mapping Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/vehicle": {
+	  "get": {
+		"description": "Get All Vehicle",
+		"summary": "Get All Vehicle",
+		"tags": [
+		"Ms Vehicle"
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "post": {
+		"description": "Add Vehicle",
+		"summary": "Add Vehicle",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Vehicle"
+		],
+		"parameters": [{
+		  "name": "license_plate",
+		  "in": "formData",
+		  "description": "License Plate",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vin",
+		  "in": "formData",
+		  "description": "Vin",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "machine_number",
+		  "in": "formData",
+		  "description": "Machine Number",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_brand",
+		  "in": "formData",
+		  "description": "Vehicle Brand",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_model",
+		  "in": "formData",
+		  "description": "Vehicle Model",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_type",
+		  "in": "formData",
+		  "description": "Vehicle Type",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_color",
+		  "in": "formData",
+		  "description": "Vehicle Color",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_year",
+		  "in": "formData",
+		  "description": "Vehicle Year",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "stnk_date",
+		  "in": "formData",
+		  "description": "Stnk date",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "installation_date",
+		  "in": "formData",
+		  "description": "Installation Date",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "odometer",
+		  "in": "formData",
+		  "description": "Odometer",
+		  "required": true,
+		  "type": "integer"
+		},
+		{
+		  "name": "imei_obd_number",
+		  "in": "formData",
+		  "description": "Imei Obd Number",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "simcard_number",
+		  "in": "formData",
+		  "description": "Simcard Number",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "fleet_group_id",
+		  "in": "formData",
+		  "description": "Fleet Group Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "created_by",
+		  "in": "formData",
+		  "description": "Created By",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_type_id",
+		  "in": "formData",
+		  "description": "Device Type Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_model_id",
+		  "in": "formData",
+		  "description": "Device Model Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_group_id",
+		  "in": "formData",
+		  "description": "Device Group Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "fuel_ratio",
+		  "in": "formData",
+		  "description": "Fuel Ration",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/vehicle/{id}": {
+	  "get": {
+		"description": "Vehicle Detail",
+		"summary": "Vehicle Detail",
+		"tags": [
+		"Ms Vehicle"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Vehicle Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "put": {
+		"description": "Update Vehicle",
+		"summary": "Update Vehicle",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Vehicle"
+		],
+		"parameters": [{
+		  "name": "id",
+		  "in": "path",
+		  "description": "Vehicle Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "license_plate",
+		  "in": "formData",
+		  "description": "License Plate",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vin",
+		  "in": "formData",
+		  "description": "Vin",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "machine_number",
+		  "in": "formData",
+		  "description": "Machine Number",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_brand",
+		  "in": "formData",
+		  "description": "Vehicle Brand",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_model",
+		  "in": "formData",
+		  "description": "Vehicle Model",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_type",
+		  "in": "formData",
+		  "description": "Vehicle Type",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_color",
+		  "in": "formData",
+		  "description": "Vehicle Color",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_year",
+		  "in": "formData",
+		  "description": "Vehicle Year",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "stnk_date",
+		  "in": "formData",
+		  "description": "Stnk Date",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "installation_date",
+		  "in": "formData",
+		  "description": "Installation Date",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "odometer",
+		  "in": "formData",
+		  "description": "Odometer",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "status",
+		  "in": "formData",
+		  "description": "Status",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "created_by",
+		  "in": "formData",
+		  "description": "Created By",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "delete": {
+		"description": "Delete Vehicle",
+		"summary": "Delete Vehicle",
+		"tags": [
+		"Ms Vehicle"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Vehicle Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/vehicle/fleet-group/{id}": {
+	  "get": {
+		"description": "Get All Vehicle By Fleet Group",
+		"summary": "Get All Vehicle By Fleet Group",
+		"tags": [
+		"Ms Vehicle"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Fleet Group Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  },
+	  "/vehiclebulk": {
+	  "post": {
+		"description": "Add Bulk Vehicle",
+		"summary": "Add Bulk Vehicle",
+		"consumes": [
+		"application/json"
+		],
+		"tags": [
+		"Ms Vehicle"
+		],
+		"parameters": [{
+		  "name": "body",
+		  "in": "body",
+		  "description": "Data Vehicle",
+		  "required": true,
+		  "schema": {
+		  "required": [
+			"data_vehicle",
+			"created_by"
+		  ],
+		  "properties": {
+			"data_vehicle":{
+			"type": "array",
+			"items":{
+			  "type": "object",
+			  "required": [
+				"license_plate",
+				"vin",
+				"machine_number",
+				"vehicle_brand",
+				"vehicle_model",
+				"vehicle_type",
+				"vehicle_color",
+				"vehicle_year",
+				"stnk_date",
+				"installation_date",
+				"odometer",
+				"imei_obd_number",
+				"simcard_number",
+				"fleet_group_id",
+				"fuel_ratio"
+			  ],
+			  "properties":{
+				"license_plate": {
+				"type": "string"
+				},
+				"vin": {
+				"type": "string"
+				},
+				"machine_number": {
+				"type": "string"
+				},
+				"vehicle_brand": {
+				"type": "string"
+				},
+				"vehicle_model": {
+				"type": "string"
+				},
+				"vehicle_type": {
+				"type": "string"
+				},
+				"vehicle_color": {
+				"type": "string"
+				},
+				"vehicle_year": {
+				"type": "string"
+				},
+				"stnk_date": {
+				"type": "string"
+				},
+				"installation_date": {
+				"type": "string"
+				},
+				"odometer": {
+				"type": "integer"
+				},
+				"imei_obd_number": {
+				"type": "string"
+				},
+				"simcard_number": {
+				"type": "string"
+				},
+				"device_type_code": {
+				"type": "string"
+				},
+				"device_model_code": {
+				"type": "string"
+				},
+				"device_group_code": {
+				"type": "string"
+				},
+				"fleet_group_id": {
+				"type": "string"
+				},
+				"fuel_ratio": {
+				"type": "string"
+				}
+			  }
+			}
+			},
+			"created_by":{
+			"type": "string"
+			}
+		  }
+		  }
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/geofence": {
+	  "get": {
+		"description": "Get All Geofence",
+		"summary": "Get All Geofence",
+		"tags": [
+		"Ms Geofence"
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "post": {
+		"description": "Add Geofence",
+		"summary": "Add Geofence",
+		"consumes": [
+		"application/json"
+		],
+		"tags": [
+		"Ms Geofence"
+		],
+		"parameters": [{
+		  "name": "body",
+		  "in": "body",
+		  "description": "Geofence Data",
+		  "schema":{
+		  "required": [
+			"geofence_detail",
+			"geofence_name",
+			"type",
+			"colour",
+			"created_by"
+		  ],
+		  "properties": {
+			"geofence_detail":{
+			"type": "array",
+			"items":{
+			  "type": "object",
+			  "required": [
+			  "latitude",
+			  "longitude"
+			  ],
+			  "properties":{
+			  "latitude": {
+			  "type": "string"
+			  },
+			  "longitude": {
+			  "type": "string"
+			  }
+			  }
+			}
+			},
+			"geofence_name":{
+			"type": "string"
+			},
+			"type":{
+			"type": "string"
+			},
+			"colour":{
+			"type": "string"
+			},
+			"created_by":{
+			"type": "string"
+			}
+		  }
+		  } 
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/geofence/{id}": {
+	  "get": {
+		"description": "Geofence Detail",
+		"summary": "Geofence Detail",
+		"tags": [
+		"Ms Geofence"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Geofence Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "put": {
+		"description": "Update Geofence",
+		"summary": "Update Geofence",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Geofence"
+		],
+		"parameters": [{
+		  "name": "id",
+		  "in": "path",
+		  "description": "Geofence Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "geofence_name",
+		  "in": "formData",
+		  "description": "Geofence Name",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "colour",
+		  "in": "formData",
+		  "description": "Geofence Colour",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "delete": {
+		"description": "Delete Geofence",
+		"summary": "Delete Geofence",
+		"tags": [
+		"Ms Geofence"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Geofence Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/geofence-detail": {
+	  "get": {
+		"description": "Get All Geofence Detail",
+		"summary": "Get All Geofence Detail",
+		"tags": [
+		"Ms Geofence Detail"
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "post": {
+		"description": "Add Geofence Detail",
+		"summary": "Add Geofence Detail",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Geofence Detail"
+		],
+		"parameters": [{
+		  "name": "body",
+		  "in": "body",
+		  "description": "Geofence Detail Data",
+		  "schema":{
+		  "required": [
+			"data_vehicle",
+			"geofence_id",
+			"created_by"
+		  ],
+		  "properties": {
+			"data_geofence":{
+			"type": "array",
+			"items":{
+			  "type": "object",
+			  "required": [
+			  "latitude",
+			  "longitude"
+			  ],
+			  "properties":{
+			  "latitude": {
+			  "type": "string"
+			  },
+			  "longitude": {
+			  "type": "string"
+			  }
+			  }
+			}
+			},
+			"geofence_id":{
+			"type": "string"
+			},
+			"created_by":{
+			"type": "string"
+			}
+		  }
+		  } 
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/geofence-detail/{id}": {
+	  "get": {
+		"description": "Geofence Detail",
+		"summary": "Geofence Detail",
+		"tags": [
+		"Ms Geofence Detail"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Geofence Detail Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "put": {
+		"description": "Update Geofence Detail",
+		"summary": "Update Geofence Detail",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Geofence Detail"
+		],
+		"parameters": [{
+		  "name": "id",
+		  "in": "path",
+		  "description": "Geofence Detail Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "body",
+		  "in": "body",
+		  "description": "Geofence Detail Data",
+		  "schema":{
+		  "required": [
+			"data_vehicle",
+			"geofence_id",
+			"created_by"
+		  ],
+		  "properties": {
+			"data_geofence":{
+			"type": "array",
+			"items":{
+			  "type": "object",
+			  "required": [
+			  "latitude",
+			  "longitude"
+			  ],
+			  "properties":{
+			  "latitude": {
+			  "type": "string"
+			  },
+			  "longitude": {
+			  "type": "string"
+			  }
+			  }
+			}
+			},
+			"geofence_id":{
+			"type": "string"
+			},
+			"created_by":{
+			"type": "string"
+			}
+		  }
+		  } 
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "delete": {
+		"description": "Delete Geofence Detail",
+		"summary": "Delete Geofence Detail",
+		"tags": [
+		"Ms Geofence Detail"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Geofence Detail Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/geofence-detail/geofence/{id}": {
+	  "get": {
+		"description": "Show Geofence Detail By Geofence",
+		"summary": "Show Geofence Detail By Geofence",
+		"tags": [
+		"Ms Geofence Detail"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Geofence Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  },
+	  "/geofence-vehicle": {
+	  "get": {
+		"description": "Get All Geofence Vehicle",
+		"summary": "Get All Geofence Vehicle",
+		"tags": [
+		"Ms Geofence Vehicle"
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "post": {
+		"description": "Add Geofence Vehicle",
+		"summary": "Add Geofence Vehicle",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Geofence Vehicle"
+		],
+		"parameters": [{
+		  "name": "geofence_id",
+		  "in": "formData",
+		  "description": "Geofence Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_id",
+		  "in": "formData",
+		  "description": "Vehicle Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "fleet_group_id",
+		  "in": "formData",
+		  "description": "Fleet Group Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "licanse_plate",
+		  "in": "formData",
+		  "description": "License Plate",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "created_by",
+		  "in": "formData",
+		  "description": "Created By",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/geofence-vehicle/{id}": {
+	  "get": {
+		"description": "Geofence Vehicle Detail",
+		"summary": "Geofence Vehicle Detail",
+		"tags": [
+		"Ms Geofence Vehicle"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Geofence Vehicle Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "put": {
+		"description": "Update Geofence Vehicle",
+		"summary": "Update Geofence Vehicle",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Geofence Vehicle"
+		],
+		"parameters": [{
+		  "name": "id",
+		  "in": "path",
+		  "description": "Geofence Vehicle Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "geofence_id",
+		  "in": "formData",
+		  "description": "Geofence Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_id",
+		  "in": "formData",
+		  "description": "Vehicle Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "fleet_group_id",
+		  "in": "formData",
+		  "description": "Fleet Group Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "licanse_plate",
+		  "in": "formData",
+		  "description": "License Plate",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "created_by",
+		  "in": "formData",
+		  "description": "Created By",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "delete": {
+		"description": "Delete Geofence Vehicle",
+		"summary": "Delete Geofence Vehicle",
+		"tags": [
+		"Ms Geofence Vehicle"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Geofence Vehicle Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/geofence-vehicle/geofence/{id}": {
+	  "get": {
+		"description": "Show Geofence Vehicle By Geofence",
+		"summary": "Show Geofence Vehicle By Geofence",
+		"tags": [
+		"Ms Geofence Vehicle"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Geofence Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "put": {
+		"description": "Update Geofence Vehicle By Geofence",
+		"summary": "Update Geofence Vehicle By Geofence",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Geofence Vehicle"
+		],
+		"parameters": [{
+		  "name": "id",
+		  "in": "path",
+		  "description": "Geofence Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "body",
+		  "in": "body",
+		  "description": "Geofence Detail Data",
+		  "schema":{
+		  "required": [
+			"data_geofence",
+			"geofence_id",
+			"fleet_group_id",
+			"created_by"
+		  ],
+		  "properties": {
+			"data_geofence":{
+			"type": "array",
+			"items":{
+			  "type": "object",
+			  "required": [
+			  "vehicle_id",
+			  "license_plate"
+			  ],
+			  "properties":{
+			  "vehicle_id": {
+			  "type": "string"
+			  },
+			  "license_plate": {
+			  "type": "string"
+			  }
+			  }
+			}
+			},
+			"geofence_id":{
+			"type": "string"
+			},
+			"alert_in_zone":{
+			"type": "string"
+			},
+			"alert_out_zone":{
+			"type": "string"
+			},
+			"created_by":{
+			"type": "string"
+			}
+		  }
+		  } 
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  },
+	  "/geofence-vehiclebulk": {
+	  "post": {
+		"description": "Add Geofence Vehicle Bulk",
+		"summary": "Add Geofence Vehicle bulk",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Geofence Vehicle"
+		],
+		"parameters": [{
+		  "name": "body",
+		  "in": "body",
+		  "description": "Geofence Detail Data",
+		  "schema":{
+		  "required": [
+			"data_geofence",
+			"geofence_id",
+			"fleet_group_id",
+			"created_by"
+		  ],
+		  "properties": {
+			"data_geofence":{
+			"type": "array",
+			"items":{
+			  "type": "object",
+			  "required": [
+			  "vehicle_id",
+			  "license_plate"
+			  ],
+			  "properties":{
+			  "vehicle_id": {
+			  "type": "string"
+			  },
+			  "license_plate": {
+			  "type": "string"
+			  }
+			  }
+			}
+			},
+			"geofence_id":{
+			"type": "string"
+			},
+			"alert_in_zone":{
+			"type": "string"
+			},
+			"alert_out_zone":{
+			"type": "string"
+			},
+			"created_by":{
+			"type": "string"
+			}
+		  }
+		  } 
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/vehicle-maintenance": {
+	  "get": {
+		"description": "Get All Vehicle Maintenance",
+		"summary": "Get All Vehicle Maintenance",
+		"tags": [
+		"Ms Vehicle Maintenance"
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "post": {
+		"description": "Add Vehicle Maintenance",
+		"summary": "Add Vehicle Maintenance",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Vehicle Maintenance"
+		],
+		"parameters": [{
+		  "name": "vehicle_id",
+		  "in": "formData",
+		  "description": "Vehicle Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "license_plate",
+		  "in": "formData",
+		  "description": "License Plate",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "description",
+		  "in": "formData",
+		  "description": "Description",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "fleet_group_id",
+		  "in": "formData",
+		  "description": "Fleet Group Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vin",
+		  "in": "formData",
+		  "description": "Vin",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "machine_number",
+		  "in": "formData",
+		  "description": "Machine Number",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "imei_old",
+		  "in": "formData",
+		  "description": "Imei Old",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "imei_new",
+		  "in": "formData",
+		  "description": "Imei New",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "start_date_maintenance",
+		  "in": "formData",
+		  "description": "Start Date Maintenance",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "end_date_maintenance",
+		  "in": "formData",
+		  "description": "End Date Maintenance",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "created_by",
+		  "in": "formData",
+		  "description": "Created By",
+		  "required": true,
+		  "type": "string"
+		},
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/vehicle-maintenance/{id}": {
+	  "get": {
+		"description": "Vehicle Maintenance Detail",
+		"summary": "Vehicle Maintenance Detail",
+		"tags": [
+		"Ms Vehicle Maintenance"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Vehicle Maintenance Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "put": {
+		"description": "Update Vehicle Maintenance",
+		"summary": "Update Vehicle Maintenance",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Vehicle Maintenance"
+		],
+		"parameters": [{
+		  "name": "id",
+		  "in": "path",
+		  "description": "Vehicle Maintenance Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "license_plate",
+		  "in": "formData",
+		  "description": "License Plate",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "description",
+		  "in": "formData",
+		  "description": "Description",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "fleet_group_id",
+		  "in": "formData",
+		  "description": "Fleet Group Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vin",
+		  "in": "formData",
+		  "description": "Vin",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "machine_number",
+		  "in": "formData",
+		  "description": "Machine Number",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "imei_old",
+		  "in": "formData",
+		  "description": "Imei Old",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "imei_new",
+		  "in": "formData",
+		  "description": "Imei New",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "start_date_maintenance",
+		  "in": "formData",
+		  "description": "Start Date Maintenance",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "end_date_maintenance",
+		  "in": "formData",
+		  "description": "End Date Maintenance",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "created_by",
+		  "in": "formData",
+		  "description": "Created By",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "delete": {
+		"description": "Delete Vehicle Maintenance",
+		"summary": "Delete Vehicle Maintenance",
+		"tags": [
+		"Ms Vehicle Maintenance"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Vehicle Maintenance Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/vehicle-monitoring/filter": {
+	  "get": {
+		"description": "Get All Vehicle Monitoring",
+		"summary": "Get All Vehicle Monitoring",
+		"tags": [
+		"Ms Vehicle Monitoring"
+		],
+		"parameters": [{
+		  "name": "fleet_group_id",
+		  "in": "query",
+		  "description": "Fleet Group Id",
+		  "required": true,
+		  "type": "string"
+		},
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/vehicle-monitoring/filter/license-plate": {
+	  "post": {
+		"description": "Add Vehicle Monitoring License Plate",
+		"summary": "Add Vehicle Monitoring License Plate",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Vehicle Monitoring"
+		],
+		"parameters": [{
+		  "name": "fleet_group_id",
+		  "in": "formData",
+		  "description": "Fleet Group Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "geofence_id",
+		  "in": "formData",
+		  "description": "Geofence Id",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "imei_obd_number",
+		  "in": "formData",
+		  "description": "Imei Obd Number",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "vin",
+		  "in": "formData",
+		  "description": "Vin",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "license_plate",
+		  "in": "formData",
+		  "description": "License Plate",
+		  "required": false,
+		  "type": "string"
+		},
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/vehicle-monitoring/cluster/fleet-group/{id}": {
+	  "get": {
+		"description": "Vehicle Monitoring By Fleet Group",
+		"summary": "Vehicle Monitoring By Fleet Group",
+		"tags": [
+		"Ms Vehicle Monitoring"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Fleet Group Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  },
+	  "/vehicle-monitoring/child/fleet-group/{id}": {
+	  "get": {
+		"description": "Vehicle Monitoring Child By Fleet Group",
+		"summary": "Vehicle Maintenance Child By Fleet Group",
+		"tags": [
+		"Ms Vehicle Monitoring"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Fleet Group Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/total-vehicle/fleet-group/{id}": {
+	  "get": {
+		"description": "Total Vehicle By Fleet Group",
+		"summary": "Total Vehicle By Fleet Group",
+		"tags": [
+		"Dashboard"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Fleet Group Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/geofence-violation/fleet-group/{id}": {
+	  "get": {
+		"description": "Get Geofence Violation By Fleet Group",
+		"summary": "Get Geofence Violation By Fleet Group",
+		"tags": [
+		"Dashboard"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Fleet Group Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/moving-vehicle/fleet-group/{id}": {
+	  "get": {
+		"description": "Get Moving Vehicle By Fleet Group",
+		"summary": "Get Moving Vehicle By Fleet Group",
+		"tags": [
+		"Dashboard"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Fleet Group Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/idle-vehicle/fleet-group/{id}": {
+	  "get": {
+		"description": "Get Idle Vehicle By Fleet Group",
+		"summary": "Get Idle Vehicle By Fleet Group",
+		"tags": [
+		"Dashboard"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Fleet Group Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/stop-vehicle/fleet-group/{id}": {
+	  "get": {
+		"description": "Get Stop Vehicle By Fleet Group",
+		"summary": "Get Stop Vehicle By Fleet Group",
+		"tags": [
+		"Dashboard"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Fleet Group Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/silent-vehicle/fleet-group/{id}": {
+	  "get": {
+		"description": "Get Silent Vehicle By Fleet Group",
+		"summary": "Get Silent Vehicle By Fleet Group",
+		"tags": [
+		"Dashboard"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Fleet Group Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/mw-mapping": {
+	  "get": {
+		"description": "Get All Mw Mapping",
+		"summary": "Get All Mw Mapping",
+		"tags": [
+		"Mw Mapping"
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "post": {
+		"description": "Add Mw Mapping",
+		"summary": "Add Mw Mapping",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Mw Mapping"
+		],
+		"parameters": [{
+		  "name": "device_id",
+		  "in": "formData",
+		  "description": "Device Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "imei",
+		  "in": "formData",
+		  "description": "Imei",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_type",
+		  "in": "formData",
+		  "description": "Device Type",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_model",
+		  "in": "formData",
+		  "description": "Device Model",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_number",
+		  "in": "formData",
+		  "description": "Vehicle Number",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "priority",
+		  "in": "formData",
+		  "description": "Priority",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "latitude",
+		  "in": "formData",
+		  "description": "Latitude",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "longitude",
+		  "in": "formData",
+		  "description": "Longitude",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "location",
+		  "in": "formData",
+		  "description": "Location",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "altitude",
+		  "in": "formData",
+		  "description": "Altitude",
+		  "required": true,
+		  "type": "string"
+		},{
+		  "name": "direction",
+		  "in": "formData",
+		  "description": "Direction",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "speed",
+		  "in": "formData",
+		  "description": "Speed",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "satellite",
+		  "in": "formData",
+		  "description": "Satellite",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "accuracy",
+		  "in": "formData",
+		  "description": "Accuracy",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dtc_number",
+		  "in": "formData",
+		  "description": "Dtc Number",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "lac",
+		  "in": "formData",
+		  "description": "Lac",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gps_pdop",
+		  "in": "formData",
+		  "description": "Gps Pdop",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gps_hdop",
+		  "in": "formData",
+		  "description": "Gps Hdop",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gsm_signal_level",
+		  "in": "formData",
+		  "description": "Gsm Signal Level",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "trip_odometer",
+		  "in": "formData",
+		  "description": "Trip Odometer",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "total_odometer",
+		  "in": "formData",
+		  "description": "Total Odometer",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "external_power_voltage",
+		  "in": "formData",
+		  "description": "External Power Voltage",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "internal_battery_voltage",
+		  "in": "formData",
+		  "description": "Internal Battery Voltage",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "internal_battery_current",
+		  "in": "formData",
+		  "description": "Internal Battery Current",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "cell_id",
+		  "in": "formData",
+		  "description": "Cell Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "pto_state",
+		  "in": "formData",
+		  "description": "Pto State",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_total_fuel_used",
+		  "in": "formData",
+		  "description": "Engine Total Fuel Used",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "fuel_1_x",
+		  "in": "formData",
+		  "description": "Fuel 1 X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "server_time",
+		  "in": "formData",
+		  "description": "Server Time",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_time",
+		  "in": "formData",
+		  "description": "Device Time",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_timestamp",
+		  "in": "formData",
+		  "description": "Device Timestamp",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_total_hours_of_operation_x",
+		  "in": "formData",
+		  "description": "Engine Total Hours Of Operation X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "server_distance",
+		  "in": "formData",
+		  "description": "Server Distance",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "at_least_pto_enganged",
+		  "in": "formData",
+		  "description": "At Least Pto Enganged",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "eco_driving_type",
+		  "in": "formData",
+		  "description": "Eco Driving Type",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "eco_driving_value",
+		  "in": "formData",
+		  "description": "Eco Driving Value",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "wheel_based_speed",
+		  "in": "formData",
+		  "description": "Engine Total Fuel Wheel Based Speed",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "accelerator_pedal_position",
+		  "in": "formData",
+		  "description": "Accelerator Pedal Position",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_percent_load",
+		  "in": "formData",
+		  "description": "Engine Percent load",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_speed_x",
+		  "in": "formData",
+		  "description": "Engine Speed X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "tacho_vehicle_speed_x",
+		  "in": "formData",
+		  "description": "Tacho Vehicle Speed X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_coolant_temperature_x",
+		  "in": "formData",
+		  "description": "Engine Coolant Temperature X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "instantaneous_fuel_economy_x",
+		  "in": "formData",
+		  "description": "Instantaneous Fuel Economy X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_input_1",
+		  "in": "formData",
+		  "description": "Digital Input 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_input_2",
+		  "in": "formData",
+		  "description": "Digital Input 2",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_input_3",
+		  "in": "formData",
+		  "description": "Digital Input 3",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_input_4",
+		  "in": "formData",
+		  "description": "Digital Input 4",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "sensor",
+		  "in": "formData",
+		  "description": "Sensor",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "ignition",
+		  "in": "formData",
+		  "description": "Ignition",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "crash_detection",
+		  "in": "formData",
+		  "description": "Crash Detection",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "geofence_zone_01",
+		  "in": "formData",
+		  "description": "Geofence Zone 01",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_output_1",
+		  "in": "formData",
+		  "description": "Digital Output 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_output_2",
+		  "in": "formData",
+		  "description": "Digital Output 2",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gps_status",
+		  "in": "formData",
+		  "description": "Gps Status",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "movement_sensor",
+		  "in": "formData",
+		  "description": "Movement Sensor",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "data_mode",
+		  "in": "formData",
+		  "description": "Data Mode",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "deep_sleep",
+		  "in": "formData",
+		  "description": "Deep Sleep",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "analog_input_1",
+		  "in": "formData",
+		  "description": "Analog Input 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gsm_operator",
+		  "in": "formData",
+		  "description": "Gsm Operator",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_temperature_1",
+		  "in": "formData",
+		  "description": "Dallas Temperature 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_temperature_2",
+		  "in": "formData",
+		  "description": "Dallas Temperature 2",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_temperature_3",
+		  "in": "formData",
+		  "description": "Dallas Temperature 3",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_temperature_4",
+		  "in": "formData",
+		  "description": "Dallas Temperature 4",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_id_1",
+		  "in": "formData",
+		  "description": "Dallas Id 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_id_2",
+		  "in": "formData",
+		  "description": "Dallas Id 2",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_id_3",
+		  "in": "formData",
+		  "description": "Dallas Id 3",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_id_4",
+		  "in": "formData",
+		  "description": "Dallas Id 4",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "event",
+		  "in": "formData",
+		  "description": "Event",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "event_type_id",
+		  "in": "formData",
+		  "description": "Event Type Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "event_type",
+		  "in": "formData",
+		  "description": "Event Type",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "telemetry",
+		  "in": "formData",
+		  "description": "Telemetry",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "is_blackbox",
+		  "in": "formData",
+		  "description": "Is Blackbox",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "fleet_group_id",
+		  "in": "formData",
+		  "description": "Fleet Group Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "fleet_group_name",
+		  "in": "formData",
+		  "description": "Fleet Group Name",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "driver_code",
+		  "in": "formData",
+		  "description": "Driver Code",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "driver_name",
+		  "in": "formData",
+		  "description": "Driver Name",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "license_plate",
+		  "in": "formData",
+		  "description": "License Plate",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "simcard_number",
+		  "in": "formData",
+		  "description": "Simcard Number",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "machine_number",
+		  "in": "formData",
+		  "description": "Machine Number",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_brand",
+		  "in": "formData",
+		  "description": "Vehicle Brand",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_model",
+		  "in": "formData",
+		  "description": "Vehicle Model",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_id",
+		  "in": "formData",
+		  "description": "Vehicle Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "fuel_consumed",
+		  "in": "formData",
+		  "description": "Fuel Consumed",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/mw-mapping/{id}": {
+	  "get": {
+		"description": "Mw Mapping Detail",
+		"summary": "Mw Mapping Detail",
+		"tags": [
+		"Mw Mapping"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Mw Mapping Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "put": {
+		"description": "Update Mw Mapping",
+		"summary": "Update Mw Mapping",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Mw Mapping"
+		],
+		"parameters": [{
+		  "name": "id",
+		  "in": "path",
+		  "description": "Mw Mapping Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_id",
+		  "in": "formData",
+		  "description": "Device Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "imei",
+		  "in": "formData",
+		  "description": "Imei",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_type",
+		  "in": "formData",
+		  "description": "Device Type",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_model",
+		  "in": "formData",
+		  "description": "Device Model",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_number",
+		  "in": "formData",
+		  "description": "Vehicle Number",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "priority",
+		  "in": "formData",
+		  "description": "Priority",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "latitude",
+		  "in": "formData",
+		  "description": "Latitude",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "longitude",
+		  "in": "formData",
+		  "description": "Longitude",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "location",
+		  "in": "formData",
+		  "description": "Location",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "altitude",
+		  "in": "formData",
+		  "description": "Altitude",
+		  "required": true,
+		  "type": "string"
+		},{
+		  "name": "direction",
+		  "in": "formData",
+		  "description": "Direction",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "speed",
+		  "in": "formData",
+		  "description": "Speed",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "satellite",
+		  "in": "formData",
+		  "description": "Satellite",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "accuracy",
+		  "in": "formData",
+		  "description": "Accuracy",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dtc_number",
+		  "in": "formData",
+		  "description": "Dtc Number",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "lac",
+		  "in": "formData",
+		  "description": "Lac",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gps_pdop",
+		  "in": "formData",
+		  "description": "Gps Pdop",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gps_hdop",
+		  "in": "formData",
+		  "description": "Gps Hdop",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gsm_signal_level",
+		  "in": "formData",
+		  "description": "Gsm Signal Level",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "trip_odometer",
+		  "in": "formData",
+		  "description": "Trip Odometer",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "total_odometer",
+		  "in": "formData",
+		  "description": "Total Odometer",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "external_power_voltage",
+		  "in": "formData",
+		  "description": "External Power Voltage",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "internal_battery_voltage",
+		  "in": "formData",
+		  "description": "Internal Battery Voltage",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "internal_battery_current",
+		  "in": "formData",
+		  "description": "Internal Battery Current",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "cell_id",
+		  "in": "formData",
+		  "description": "Cell Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "pto_state",
+		  "in": "formData",
+		  "description": "Pto State",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_total_fuel_used",
+		  "in": "formData",
+		  "description": "Engine Total Fuel Used",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "fuel_1_x",
+		  "in": "formData",
+		  "description": "Fuel 1 X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "server_time",
+		  "in": "formData",
+		  "description": "Server Time",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_time",
+		  "in": "formData",
+		  "description": "Device Time",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_timestamp",
+		  "in": "formData",
+		  "description": "Device Timestamp",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_total_hours_of_operation_x",
+		  "in": "formData",
+		  "description": "Engine Total Hours Of Operation X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "server_distance",
+		  "in": "formData",
+		  "description": "Server Distance",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "at_least_pto_enganged",
+		  "in": "formData",
+		  "description": "At Least Pto Enganged",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "eco_driving_type",
+		  "in": "formData",
+		  "description": "Eco Driving Type",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "eco_driving_value",
+		  "in": "formData",
+		  "description": "Eco Driving Value",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "wheel_based_speed",
+		  "in": "formData",
+		  "description": "Engine Total Fuel Wheel Based Speed",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "accelerator_pedal_position",
+		  "in": "formData",
+		  "description": "Accelerator Pedal Position",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_percent_load",
+		  "in": "formData",
+		  "description": "Engine Percent load",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_speed_x",
+		  "in": "formData",
+		  "description": "Engine Speed X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "tacho_vehicle_speed_x",
+		  "in": "formData",
+		  "description": "Tacho Vehicle Speed X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_coolant_temperature_x",
+		  "in": "formData",
+		  "description": "Engine Coolant Temperature X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "instantaneous_fuel_economy_x",
+		  "in": "formData",
+		  "description": "Instantaneous Fuel Economy X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_input_1",
+		  "in": "formData",
+		  "description": "Digital Input 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_input_2",
+		  "in": "formData",
+		  "description": "Digital Input 2",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_input_3",
+		  "in": "formData",
+		  "description": "Digital Input 3",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_input_4",
+		  "in": "formData",
+		  "description": "Digital Input 4",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "sensor",
+		  "in": "formData",
+		  "description": "Sensor",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "ignition",
+		  "in": "formData",
+		  "description": "Ignition",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "crash_detection",
+		  "in": "formData",
+		  "description": "Crash Detection",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "geofence_zone_01",
+		  "in": "formData",
+		  "description": "Geofence Zone 01",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_output_1",
+		  "in": "formData",
+		  "description": "Digital Output 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_output_2",
+		  "in": "formData",
+		  "description": "Digital Output 2",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gps_status",
+		  "in": "formData",
+		  "description": "Gps Status",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "movement_sensor",
+		  "in": "formData",
+		  "description": "Movement Sensor",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "data_mode",
+		  "in": "formData",
+		  "description": "Data Mode",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "deep_sleep",
+		  "in": "formData",
+		  "description": "Deep Sleep",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "analog_input_1",
+		  "in": "formData",
+		  "description": "Analog Input 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gsm_operator",
+		  "in": "formData",
+		  "description": "Gsm Operator",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_temperature_1",
+		  "in": "formData",
+		  "description": "Dallas Temperature 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_temperature_2",
+		  "in": "formData",
+		  "description": "Dallas Temperature 2",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_temperature_3",
+		  "in": "formData",
+		  "description": "Dallas Temperature 3",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_temperature_4",
+		  "in": "formData",
+		  "description": "Dallas Temperature 4",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_id_1",
+		  "in": "formData",
+		  "description": "Dallas Id 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_id_2",
+		  "in": "formData",
+		  "description": "Dallas Id 2",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_id_3",
+		  "in": "formData",
+		  "description": "Dallas Id 3",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_id_4",
+		  "in": "formData",
+		  "description": "Dallas Id 4",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "event",
+		  "in": "formData",
+		  "description": "Event",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "event_type_id",
+		  "in": "formData",
+		  "description": "Event Type Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "event_type",
+		  "in": "formData",
+		  "description": "Event Type",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "telemetry",
+		  "in": "formData",
+		  "description": "Telemetry",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "is_blackbox",
+		  "in": "formData",
+		  "description": "Is Blackbox",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "fleet_group_id",
+		  "in": "formData",
+		  "description": "Fleet Group Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "fleet_group_name",
+		  "in": "formData",
+		  "description": "Fleet Group Name",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "driver_code",
+		  "in": "formData",
+		  "description": "Driver Code",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "driver_name",
+		  "in": "formData",
+		  "description": "Driver Name",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "license_plate",
+		  "in": "formData",
+		  "description": "License Plate",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "simcard_number",
+		  "in": "formData",
+		  "description": "Simcard Number",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "machine_number",
+		  "in": "formData",
+		  "description": "Machine Number",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_brand",
+		  "in": "formData",
+		  "description": "Vehicle Brand",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_model",
+		  "in": "formData",
+		  "description": "Vehicle Model",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_id",
+		  "in": "formData",
+		  "description": "Vehicle Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "fuel_consumed",
+		  "in": "formData",
+		  "description": "Fuel Consumed",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "delete": {
+		"description": "Delete Mw Mapping",
+		"summary": "Delete Mw Mapping",
+		"tags": [
+		"Mw Mapping"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Mw Mapping Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/mw-mapping/cluster/{fleet_group_id}": {
+	  "get": {
+		"description": "Mw Mapping Detail",
+		"summary": "Mw Mapping Detail",
+		"tags": [
+		"Mw Mapping"
+		],
+		"parameters": [{
+		"name": "fleet_group_id",
+		"in": "path",
+		"description": "Fleet Group Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/mw-mapping/subscribe/{licensePlate}": {
+	  "get": {
+		"description": "Get Mw Mapping Subscribe By License Plate",
+		"summary": "Get Mw Mapping Subscribe By License Plate",
+		"tags": [
+		"Subscribe & Unsubscribe"
+		],
+		"parameters": [{
+		"name": "licensePlate",
+		"in": "path",
+		"description": "License Plate",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/mw-mapping/unsubscribe/{licensePlate}": {
+	  "get": {
+		"description": "Get Mw Mapping Unsubscribe By License Plate",
+		"summary": "Get Mw Mapping Unsubscribe By License Plate",
+		"tags": [
+		"Subscribe & Unsubscribe"
+		],
+		"parameters": [{
+		"name": "licensePlate",
+		"in": "path",
+		"description": "License Plate",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/device-groups": {
+	  "get": {
+		"description": "Get List Device Groups",
+		"summary": "Get List Device Groups",
+		"tags": [
+		"Group Device Parse"
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/device-models": {
+	  "get": {
+		"description": "Get List Device Models",
+		"summary": "Get List Device Models",
+		"tags": [
+		"Group Device Parse"
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/device-types": {
+	  "get": {
+		"description": "Get List Device Types",
+		"summary": "Get List Device Types",
+		"tags": [
+		"Group Device Parse"
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/login": {
+	  "post": {
+		"description": "Login",
+		"summary": "Login",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Login"
+		],
+		"parameters": [{
+		  "name": "email",
+		  "in": "formData",
+		  "description": "Email",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "password",
+		  "in": "formData",
+		  "description": "Password",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/refresh-token": {
+	  "get": {
+		"description": "Refresh Token",
+		"summary": "Refresh Token",
+		"tags": [
+		"Refresh Token"
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/user/activation/{code}": {
+	  "get": {
+		"description": "Activation",
+		"summary": "Activation",
+		"tags": [
+		"Activation"
+		],
+		"parameters": [{
+		  "name": "code",
+		  "in": "path",
+		  "description": "Code",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/create-password/{code}": {
+	  "put": {
+		"description": "Create Password",
+		"summary": "Create Password",
+		"tags": [
+		"Create Password"
+		],
+		"parameters": [{
+		  "name": "code",
+		  "in": "path",
+		  "description": "Code",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/forgot-password": {
+	  "get": {
+		"description": "Forgot Password",
+		"summary": "Forgot Password",
+		"tags": [
+		"Forgot Password"
+		],
+		"parameters": [{
+		  "name": "email",
+		  "in": "path",
+		  "description": "Email",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		}
+	  }
+	  },
+	  "/vehicle-activity": {
+	  "get": {
+		"description": "Get All Vehicle Activity",
+		"summary": "Get All Vehicle Activity",
+		"tags": [
+		"Ms Vehicle Activity"
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "post": {
+		"description": "Add Vehicle Activity",
+		"summary": "Add Vehicle Activity",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Vehicle Activity"
+		],
+		"parameters": [{
+		  "name": "activity_name",
+		  "in": "formData",
+		  "description": "Activity Name",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "icon",
+		  "in": "formData",
+		  "description": "Icon",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/vehicle-activity/{id}": {
+	  "get": {
+		"description": "Vehicle Activity Detail",
+		"summary": "Vehicle Activity Detail",
+		"tags": [
+		"Ms Vehicle Activity"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Vehicle Activity Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "put": {
+		"description": "Update Vehicle Activity",
+		"summary": "Update Vehicle Activity",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Ms Vehicle Activity"
+		],
+		"parameters": [{
+		  "name": "id",
+		  "in": "path",
+		  "description": "Vehicle Activity Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "activity_name",
+		  "in": "formData",
+		  "description": "Activity Name",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "icon",
+		  "in": "formData",
+		  "description": "Icon",
+		  "required": true,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  },
+	  "delete": {
+		"description": "Delete Vehicle Activity",
+		"summary": "Delete Vehicle Activity",
+		"tags": [
+		"Ms Vehicle Activity"
+		],
+		"parameters": [{
+		"name": "id",
+		"in": "path",
+		"description": "Vehicle Activity Id",
+		"required": true,
+		"type": "string"
+		}],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/test-activity": {
+	  "post": {
+		"description": "Check Logic Test Activity",
+		"summary": "Check Logic Test Activity",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Testing"
+		],
+		"parameters": [{
+		  "name": "device_id",
+		  "in": "formData",
+		  "description": "Device Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "imei",
+		  "in": "formData",
+		  "description": "Imei",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_type",
+		  "in": "formData",
+		  "description": "Device Type",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_model",
+		  "in": "formData",
+		  "description": "Device Model",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_number",
+		  "in": "formData",
+		  "description": "Vehicle Number",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "priority",
+		  "in": "formData",
+		  "description": "Priority",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "latitude",
+		  "in": "formData",
+		  "description": "Latitude",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "longitude",
+		  "in": "formData",
+		  "description": "Longitude",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "location",
+		  "in": "formData",
+		  "description": "Location",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "altitude",
+		  "in": "formData",
+		  "description": "Altitude",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "direction",
+		  "in": "formData",
+		  "description": "Direction",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "speed",
+		  "in": "formData",
+		  "description": "Speed",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "satellite",
+		  "in": "formData",
+		  "description": "Satellite",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "accuracy",
+		  "in": "formData",
+		  "description": "Accuracy",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dtc_number",
+		  "in": "formData",
+		  "description": "Dtc Number",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "lac",
+		  "in": "formData",
+		  "description": "Lac",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gps_pdop",
+		  "in": "formData",
+		  "description": "Gps Pdop",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gps_hdop",
+		  "in": "formData",
+		  "description": "Gps Hdop",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gsm_signal_level",
+		  "in": "formData",
+		  "description": "Gsm Signal Level",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "trip_odometer",
+		  "in": "formData",
+		  "description": "Trip Odometer",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "total_odometer",
+		  "in": "formData",
+		  "description": "Total Odometer",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "external_power_voltage",
+		  "in": "formData",
+		  "description": "External Power Voltage",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "internal_battery_voltage",
+		  "in": "formData",
+		  "description": "Internal Battery Voltage",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "internal_battery_current",
+		  "in": "formData",
+		  "description": "Internal Battery Current",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "cell_id",
+		  "in": "formData",
+		  "description": "Cell Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "pto_state",
+		  "in": "formData",
+		  "description": "Pto State",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_total_fuel_used",
+		  "in": "formData",
+		  "description": "Engine Total Fuel Used",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "fuel_level_1_x",
+		  "in": "formData",
+		  "description": "Fuel Level 1 X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "server_time",
+		  "in": "formData",
+		  "description": "Server Time",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_time",
+		  "in": "formData",
+		  "description": "Device Time",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_timestamp",
+		  "in": "formData",
+		  "description": "Device Timestamp",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_total_hours_of_operation_x",
+		  "in": "formData",
+		  "description": "Engine Total Hours Of Operation X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "service_distance",
+		  "in": "formData",
+		  "description": "Service Distance",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "at_least_pto_engaged",
+		  "in": "formData",
+		  "description": "At Least Pto Engaged",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "eco_driving_type",
+		  "in": "formData",
+		  "description": "Eco Driving Type",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "eco_driving_value",
+		  "in": "formData",
+		  "description": "Eco Driving Value",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "wheel_based_speed",
+		  "in": "formData",
+		  "description": "Wheel Based Speed",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "accelerator_pedal_position",
+		  "in": "formData",
+		  "description": "Accelerator Pedal Position",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_percent_load",
+		  "in": "formData",
+		  "description": "Engine Percent Load",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_speed_x",
+		  "in": "formData",
+		  "description": "Engine Speed X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "tacho_vehicle_speed_x",
+		  "in": "formData",
+		  "description": "Tacho Vehicle Speed X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_coolant_temperature_x",
+		  "in": "formData",
+		  "description": "Engine Coolant Temperature X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "instantaneous_fuel_economy_x",
+		  "in": "formData",
+		  "description": "Instantaneous Fuel Economy X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_input_1",
+		  "in": "formData",
+		  "description": "Digital Input 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_input_2",
+		  "in": "formData",
+		  "description": "Digital Input 2",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_input_3",
+		  "in": "formData",
+		  "description": "Digital Input 3",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_input_4",
+		  "in": "formData",
+		  "description": "Digital Input 4",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "sensor",
+		  "in": "formData",
+		  "description": "Sensor",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "ignition",
+		  "in": "formData",
+		  "description": "Ignition",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "crash_detection",
+		  "in": "formData",
+		  "description": "Crash Detection",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "geofence_zone_01",
+		  "in": "formData",
+		  "description": "Geofence Zone 01",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_output_1",
+		  "in": "formData",
+		  "description": "Digital Output 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_output_2",
+		  "in": "formData",
+		  "description": "Digital Output 2",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gps_status",
+		  "in": "formData",
+		  "description": "Gps Status",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "movement_sensor",
+		  "in": "formData",
+		  "description": "Movement Sensor",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "data_mode",
+		  "in": "formData",
+		  "description": "Data Mode",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "deep_sleep",
+		  "in": "formData",
+		  "description": "Deep Sleep",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "analog_input_1",
+		  "in": "formData",
+		  "description": "Analog Input 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gsm_operator",
+		  "in": "formData",
+		  "description": "Gsm Operator",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_temperature_1",
+		  "in": "formData",
+		  "description": "Dallas Temperature 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_temperature_2",
+		  "in": "formData",
+		  "description": "Dallas Temperature 2",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_temperature_3",
+		  "in": "formData",
+		  "description": "Dallas Temperature 3",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_temperature_4",
+		  "in": "formData",
+		  "description": "Dallas Temperature 4",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_id_1",
+		  "in": "formData",
+		  "description": "Dallas Id 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_id_2",
+		  "in": "formData",
+		  "description": "Dallas Id 2",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_id_3",
+		  "in": "formData",
+		  "description": "Dallas Id 3",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_id_4",
+		  "in": "formData",
+		  "description": "Dallas Id 4",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "event",
+		  "in": "formData",
+		  "description": "Event",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "event_type_id",
+		  "in": "formData",
+		  "description": "Event Type Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "event_type",
+		  "in": "formData",
+		  "description": "Event Type",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "telemetry",
+		  "in": "formData",
+		  "description": "Telemetry",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "is_blackbox",
+		  "in": "formData",
+		  "description": "Is Blackbox",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "fleet_group_id",
+		  "in": "formData",
+		  "description": "Fleet Group Id",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "fleet_group_name",
+		  "in": "formData",
+		  "description": "Fleet Group Name",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "driver_code",
+		  "in": "formData",
+		  "description": "Driver Code",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "driver_name",
+		  "in": "formData",
+		  "description": "Driver Name",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "license_plate",
+		  "in": "formData",
+		  "description": "License Plate",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "simcard_number",
+		  "in": "formData",
+		  "description": "Simcard Number",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "machine_number",
+		  "in": "formData",
+		  "description": "Machine Number",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_brand",
+		  "in": "formData",
+		  "description": "Vehicle Brand",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_model",
+		  "in": "formData",
+		  "description": "Vehicle Model",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_id",
+		  "in": "formData",
+		  "description": "Vehicle Id",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "fuel_consumed",
+		  "in": "formData",
+		  "description": "Fuel Consumed",
+		  "required": false,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/test-geofence": {
+	  "post": {
+		"description": "Check Logic Test Geofence",
+		"summary": "Check Logic Test Geofence",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Testing"
+		],
+		"parameters": [{
+		  "name": "device_id",
+		  "in": "formData",
+		  "description": "Device Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "imei",
+		  "in": "formData",
+		  "description": "Imei",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_type",
+		  "in": "formData",
+		  "description": "Device Type",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_model",
+		  "in": "formData",
+		  "description": "Device Model",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_number",
+		  "in": "formData",
+		  "description": "Vehicle Number",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "priority",
+		  "in": "formData",
+		  "description": "Priority",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "latitude",
+		  "in": "formData",
+		  "description": "Latitude",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "longitude",
+		  "in": "formData",
+		  "description": "Longitude",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "location",
+		  "in": "formData",
+		  "description": "Location",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "altitude",
+		  "in": "formData",
+		  "description": "Altitude",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "direction",
+		  "in": "formData",
+		  "description": "Direction",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "speed",
+		  "in": "formData",
+		  "description": "Speed",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "satellite",
+		  "in": "formData",
+		  "description": "Satellite",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "accuracy",
+		  "in": "formData",
+		  "description": "Accuracy",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dtc_number",
+		  "in": "formData",
+		  "description": "Dtc Number",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "lac",
+		  "in": "formData",
+		  "description": "Lac",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gps_pdop",
+		  "in": "formData",
+		  "description": "Gps Pdop",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gps_hdop",
+		  "in": "formData",
+		  "description": "Gps Hdop",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gsm_signal_level",
+		  "in": "formData",
+		  "description": "Gsm Signal Level",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "trip_odometer",
+		  "in": "formData",
+		  "description": "Trip Odometer",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "total_odometer",
+		  "in": "formData",
+		  "description": "Total Odometer",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "external_power_voltage",
+		  "in": "formData",
+		  "description": "External Power Voltage",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "internal_battery_voltage",
+		  "in": "formData",
+		  "description": "Internal Battery Voltage",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "internal_battery_current",
+		  "in": "formData",
+		  "description": "Internal Battery Current",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "cell_id",
+		  "in": "formData",
+		  "description": "Cell Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "pto_state",
+		  "in": "formData",
+		  "description": "Pto State",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_total_fuel_used",
+		  "in": "formData",
+		  "description": "Engine Total Fuel Used",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "fuel_level_1_x",
+		  "in": "formData",
+		  "description": "Fuel Level 1 X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "server_time",
+		  "in": "formData",
+		  "description": "Server Time",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_time",
+		  "in": "formData",
+		  "description": "Device Time",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_timestamp",
+		  "in": "formData",
+		  "description": "Device Timestamp",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_total_hours_of_operation_x",
+		  "in": "formData",
+		  "description": "Engine Total Hours Of Operation X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "service_distance",
+		  "in": "formData",
+		  "description": "Service Distance",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "at_least_pto_engaged",
+		  "in": "formData",
+		  "description": "At Least Pto Engaged",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "eco_driving_type",
+		  "in": "formData",
+		  "description": "Eco Driving Type",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "eco_driving_value",
+		  "in": "formData",
+		  "description": "Eco Driving Value",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "wheel_based_speed",
+		  "in": "formData",
+		  "description": "Wheel Based Speed",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "accelerator_pedal_position",
+		  "in": "formData",
+		  "description": "Accelerator Pedal Position",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_percent_load",
+		  "in": "formData",
+		  "description": "Engine Percent Load",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_speed_x",
+		  "in": "formData",
+		  "description": "Engine Speed X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "tacho_vehicle_speed_x",
+		  "in": "formData",
+		  "description": "Tacho Vehicle Speed X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_coolant_temperature_x",
+		  "in": "formData",
+		  "description": "Engine Coolant Temperature X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "instantaneous_fuel_economy_x",
+		  "in": "formData",
+		  "description": "Instantaneous Fuel Economy X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_input_1",
+		  "in": "formData",
+		  "description": "Digital Input 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_input_2",
+		  "in": "formData",
+		  "description": "Digital Input 2",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_input_3",
+		  "in": "formData",
+		  "description": "Digital Input 3",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_input_4",
+		  "in": "formData",
+		  "description": "Digital Input 4",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "sensor",
+		  "in": "formData",
+		  "description": "Sensor",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "ignition",
+		  "in": "formData",
+		  "description": "Ignition",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "crash_detection",
+		  "in": "formData",
+		  "description": "Crash Detection",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "geofence_zone_01",
+		  "in": "formData",
+		  "description": "Geofence Zone 01",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_output_1",
+		  "in": "formData",
+		  "description": "Digital Output 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_output_2",
+		  "in": "formData",
+		  "description": "Digital Output 2",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gps_status",
+		  "in": "formData",
+		  "description": "Gps Status",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "movement_sensor",
+		  "in": "formData",
+		  "description": "Movement Sensor",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "data_mode",
+		  "in": "formData",
+		  "description": "Data Mode",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "deep_sleep",
+		  "in": "formData",
+		  "description": "Deep Sleep",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "analog_input_1",
+		  "in": "formData",
+		  "description": "Analog Input 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gsm_operator",
+		  "in": "formData",
+		  "description": "Gsm Operator",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_temperature_1",
+		  "in": "formData",
+		  "description": "Dallas Temperature 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_temperature_2",
+		  "in": "formData",
+		  "description": "Dallas Temperature 2",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_temperature_3",
+		  "in": "formData",
+		  "description": "Dallas Temperature 3",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_temperature_4",
+		  "in": "formData",
+		  "description": "Dallas Temperature 4",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_id_1",
+		  "in": "formData",
+		  "description": "Dallas Id 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_id_2",
+		  "in": "formData",
+		  "description": "Dallas Id 2",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_id_3",
+		  "in": "formData",
+		  "description": "Dallas Id 3",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_id_4",
+		  "in": "formData",
+		  "description": "Dallas Id 4",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "event",
+		  "in": "formData",
+		  "description": "Event",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "event_type_id",
+		  "in": "formData",
+		  "description": "Event Type Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "event_type",
+		  "in": "formData",
+		  "description": "Event Type",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "telemetry",
+		  "in": "formData",
+		  "description": "Telemetry",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "is_blackbox",
+		  "in": "formData",
+		  "description": "Is Blackbox",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "fleet_group_id",
+		  "in": "formData",
+		  "description": "Fleet Group Id",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "fleet_group_name",
+		  "in": "formData",
+		  "description": "Fleet Group Name",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "driver_code",
+		  "in": "formData",
+		  "description": "Driver Code",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "driver_name",
+		  "in": "formData",
+		  "description": "Driver Name",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "license_plate",
+		  "in": "formData",
+		  "description": "License Plate",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "simcard_number",
+		  "in": "formData",
+		  "description": "Simcard Number",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "machine_number",
+		  "in": "formData",
+		  "description": "Machine Number",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_brand",
+		  "in": "formData",
+		  "description": "Vehicle Brand",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_model",
+		  "in": "formData",
+		  "description": "Vehicle Model",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_id",
+		  "in": "formData",
+		  "description": "Vehicle Id",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "fuel_consumed",
+		  "in": "formData",
+		  "description": "Fuel Consumed",
+		  "required": false,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  },
+	  "/test-alert": {
+	  "post": {
+		"description": "Check Logic Test Alert",
+		"summary": "Check Logic Test Alert",
+		"consumes": [
+		"multipart/form-data"
+		],
+		"tags": [
+		"Testing"
+		],
+		"parameters": [{
+		  "name": "device_id",
+		  "in": "formData",
+		  "description": "Device Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "imei",
+		  "in": "formData",
+		  "description": "Imei",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_type",
+		  "in": "formData",
+		  "description": "Device Type",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_model",
+		  "in": "formData",
+		  "description": "Device Model",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_number",
+		  "in": "formData",
+		  "description": "Vehicle Number",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "priority",
+		  "in": "formData",
+		  "description": "Priority",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "latitude",
+		  "in": "formData",
+		  "description": "Latitude",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "longitude",
+		  "in": "formData",
+		  "description": "Longitude",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "location",
+		  "in": "formData",
+		  "description": "Location",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "altitude",
+		  "in": "formData",
+		  "description": "Altitude",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "direction",
+		  "in": "formData",
+		  "description": "Direction",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "speed",
+		  "in": "formData",
+		  "description": "Speed",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "satellite",
+		  "in": "formData",
+		  "description": "Satellite",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "accuracy",
+		  "in": "formData",
+		  "description": "Accuracy",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dtc_number",
+		  "in": "formData",
+		  "description": "Dtc Number",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "lac",
+		  "in": "formData",
+		  "description": "Lac",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gps_pdop",
+		  "in": "formData",
+		  "description": "Gps Pdop",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gps_hdop",
+		  "in": "formData",
+		  "description": "Gps Hdop",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gsm_signal_level",
+		  "in": "formData",
+		  "description": "Gsm Signal Level",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "trip_odometer",
+		  "in": "formData",
+		  "description": "Trip Odometer",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "total_odometer",
+		  "in": "formData",
+		  "description": "Total Odometer",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "external_power_voltage",
+		  "in": "formData",
+		  "description": "External Power Voltage",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "internal_battery_voltage",
+		  "in": "formData",
+		  "description": "Internal Battery Voltage",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "internal_battery_current",
+		  "in": "formData",
+		  "description": "Internal Battery Current",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "cell_id",
+		  "in": "formData",
+		  "description": "Cell Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "pto_state",
+		  "in": "formData",
+		  "description": "Pto State",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_total_fuel_used",
+		  "in": "formData",
+		  "description": "Engine Total Fuel Used",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "fuel_level_1_x",
+		  "in": "formData",
+		  "description": "Fuel Level 1 X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "server_time",
+		  "in": "formData",
+		  "description": "Server Time",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_time",
+		  "in": "formData",
+		  "description": "Device Time",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "device_timestamp",
+		  "in": "formData",
+		  "description": "Device Timestamp",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_total_hours_of_operation_x",
+		  "in": "formData",
+		  "description": "Engine Total Hours Of Operation X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "service_distance",
+		  "in": "formData",
+		  "description": "Service Distance",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "at_least_pto_engaged",
+		  "in": "formData",
+		  "description": "At Least Pto Engaged",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "eco_driving_type",
+		  "in": "formData",
+		  "description": "Eco Driving Type",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "eco_driving_value",
+		  "in": "formData",
+		  "description": "Eco Driving Value",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "wheel_based_speed",
+		  "in": "formData",
+		  "description": "Wheel Based Speed",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "accelerator_pedal_position",
+		  "in": "formData",
+		  "description": "Accelerator Pedal Position",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_percent_load",
+		  "in": "formData",
+		  "description": "Engine Percent Load",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_speed_x",
+		  "in": "formData",
+		  "description": "Engine Speed X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "tacho_vehicle_speed_x",
+		  "in": "formData",
+		  "description": "Tacho Vehicle Speed X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "engine_coolant_temperature_x",
+		  "in": "formData",
+		  "description": "Engine Coolant Temperature X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "instantaneous_fuel_economy_x",
+		  "in": "formData",
+		  "description": "Instantaneous Fuel Economy X",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_input_1",
+		  "in": "formData",
+		  "description": "Digital Input 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_input_2",
+		  "in": "formData",
+		  "description": "Digital Input 2",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_input_3",
+		  "in": "formData",
+		  "description": "Digital Input 3",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_input_4",
+		  "in": "formData",
+		  "description": "Digital Input 4",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "sensor",
+		  "in": "formData",
+		  "description": "Sensor",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "ignition",
+		  "in": "formData",
+		  "description": "Ignition",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "crash_detection",
+		  "in": "formData",
+		  "description": "Crash Detection",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "geofence_zone_01",
+		  "in": "formData",
+		  "description": "Geofence Zone 01",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_output_1",
+		  "in": "formData",
+		  "description": "Digital Output 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "digital_output_2",
+		  "in": "formData",
+		  "description": "Digital Output 2",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gps_status",
+		  "in": "formData",
+		  "description": "Gps Status",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "movement_sensor",
+		  "in": "formData",
+		  "description": "Movement Sensor",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "data_mode",
+		  "in": "formData",
+		  "description": "Data Mode",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "deep_sleep",
+		  "in": "formData",
+		  "description": "Deep Sleep",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "analog_input_1",
+		  "in": "formData",
+		  "description": "Analog Input 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "gsm_operator",
+		  "in": "formData",
+		  "description": "Gsm Operator",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_temperature_1",
+		  "in": "formData",
+		  "description": "Dallas Temperature 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_temperature_2",
+		  "in": "formData",
+		  "description": "Dallas Temperature 2",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_temperature_3",
+		  "in": "formData",
+		  "description": "Dallas Temperature 3",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_temperature_4",
+		  "in": "formData",
+		  "description": "Dallas Temperature 4",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_id_1",
+		  "in": "formData",
+		  "description": "Dallas Id 1",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_id_2",
+		  "in": "formData",
+		  "description": "Dallas Id 2",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_id_3",
+		  "in": "formData",
+		  "description": "Dallas Id 3",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "dallas_id_4",
+		  "in": "formData",
+		  "description": "Dallas Id 4",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "event",
+		  "in": "formData",
+		  "description": "Event",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "event_type_id",
+		  "in": "formData",
+		  "description": "Event Type Id",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "event_type",
+		  "in": "formData",
+		  "description": "Event Type",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "telemetry",
+		  "in": "formData",
+		  "description": "Telemetry",
+		  "required": true,
+		  "type": "string"
+		},
+		{
+		  "name": "is_blackbox",
+		  "in": "formData",
+		  "description": "Is Blackbox",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "fleet_group_id",
+		  "in": "formData",
+		  "description": "Fleet Group Id",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "fleet_group_name",
+		  "in": "formData",
+		  "description": "Fleet Group Name",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "driver_code",
+		  "in": "formData",
+		  "description": "Driver Code",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "driver_name",
+		  "in": "formData",
+		  "description": "Driver Name",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "license_plate",
+		  "in": "formData",
+		  "description": "License Plate",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "simcard_number",
+		  "in": "formData",
+		  "description": "Simcard Number",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "machine_number",
+		  "in": "formData",
+		  "description": "Machine Number",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_brand",
+		  "in": "formData",
+		  "description": "Vehicle Brand",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_model",
+		  "in": "formData",
+		  "description": "Vehicle Model",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "vehicle_id",
+		  "in": "formData",
+		  "description": "Vehicle Id",
+		  "required": false,
+		  "type": "string"
+		},
+		{
+		  "name": "fuel_consumed",
+		  "in": "formData",
+		  "description": "Fuel Consumed",
+		  "required": false,
+		  "type": "string"
+		}
+		],
+		"produces": [
+		"application/json"
+		],
+		"responses": {
+		"200": {
+		  "description": "success"
+		}
+		},
+		"security": [{
+		"Bearer": []
+		}]
+	  }
+	  }
+	},
+	"parameters": {
+	  "Authorization": {
+	  "name": "Authorization",
+	  "in": "header",
+	  "required": true,
+	  "type": "string"
+	  }
+	},
+	"securityDefinitions": {
+	  "Bearer": {
+	  "type": "apiKey",
+	  "name": "Authorization",
+	  "in": "header"
+	  }
+	}
+	}

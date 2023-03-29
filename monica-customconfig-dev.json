@@ -1,0 +1,4 @@
+{
+  "fileUris": ["https://monicastorage.blob.core.windows.net/monicascripting/development/SERAScriptingMonica.sh"],
+  "commandToExecute": "sh SERAScriptingMonica.sh"
+}
