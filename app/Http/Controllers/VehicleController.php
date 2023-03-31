@@ -167,7 +167,7 @@ class VehicleController extends Controller
                 'fuel_consumed'                     => trim($request->input('fuel_ratio')),
                 'device_time'                       => date('Y-m-d H:i:s'),
                 'server_time'                       => date('Y-m-d H:i:s'),
-                'device_id'                         => $data['reff_vehicle_id'],
+                'device_id'                         => (isset($data['reff_vehicle_id']))? $data['reff_vehicle_id']: "",
                 'vehicle_status'                    => 'Activation On Progress',
                 'receive_message'                   => 0,
                 'latitude'                          => "",
@@ -189,7 +189,7 @@ class VehicleController extends Controller
                 'is_overstay'                       => ""
             ];
 
-            $this->realtimeDB($vehicle->license_plate, $data_mw_mapping);
+            // $this->realtimeDB($vehicle->license_plate, $data_mw_mapping);
 
             $create_mw = MwMapping::create($data_mw_mapping);
 
